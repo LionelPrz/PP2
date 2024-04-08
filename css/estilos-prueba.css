@@ -1,0 +1,21 @@
+.boton{
+    background-color: #f0f;
+    color: #fff;
+    border: 2px solid transparent;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 0 auto;
+    margin-top: 65px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.boton:hover{
+    transform: scale(1.2);
+    background: transparent;
+    border: 2px solid var(--cont-container-buttom-color);
+    color:var(--main-text-color);
+    transition: .4s;
+    cursor: pointer;
+}
