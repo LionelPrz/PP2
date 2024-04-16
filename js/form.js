@@ -1,18 +1,31 @@
-
-
+        // lugarAbono = document.getElementById('lugarAbono'),
+        // sitioCobro = document.getElementById('sitioCobro'),
+        // planPromo = document.getElementById('planPromocional'),
+        // planCustom = document.getElementById('planPersonalizado'),
+        // pagoEfectivo = document.getElementById('pagoEfectivo'),
+        // tipoPago = document.getElementById('metodoPago'),
+        // tipoPlan = document.getElementById('opcionPlan'),
+        // planFormulario = document.getElementById('selectPlan'),
+        //  planContrato = document.getElementById('planContrato'),
+    //No mostrar Tarjeta cuando se paga en efectivo
+    // pagoEfectivo.addEventListener('click',()=>{
+    //     pagoTarjeta.style.display = "none";
+    //     sitioCobro.style.display = "block";
+        //Desplegar Planes personalizados cuando se use el boton
+    // tipoPlan.addEventListener('click',()=>{
+    //     planFormulario.style.display="block";
+    //         let custom = document.createElement('option');
+    //         custom.innerText = localStorage.getItem('megas');
+    //         tipoPlan.appendChild(custom);
+    //     mostrarPago();
+    // })
+    //     mostrarSitioCobro();
+    // });
 const tarjeta = document.querySelector('#tarjeta'),
         btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
         formulario = document.querySelector('#formulario-tarjeta'),
         deshabilitarTarjeta = document.getElementById('derecha'),
-        tipoPago = document.getElementById('metodoPago'),
-        tipoPlan = document.getElementById('opcionPlan'),
         pagoTarjeta = document.getElementById('pagoTarjeta'),
-        pagoEfectivo = document.getElementById('pagoEfectivo'),
-        planContrato = document.getElementById('planContrato'),
-        lugarAbono = document.getElementById('lugarAbono'),
-        sitioCobro = document.getElementById('sitioCobro'),
-        planPromo = document.getElementById('planPromocional'),
-        planCustom = document.getElementById('planPersonalizado'),
         numeroTarjeta = document.querySelector('#tarjeta .numero'),
         nombreTarjeta = document.querySelector('#tarjeta .nombre'),
         logoMarca = document.querySelector('#logo-marca'),
@@ -23,9 +36,10 @@ const tarjeta = document.querySelector('#tarjeta'),
         nombreFormulario = document.getElementById('inputNombre'),
         apellidoFormulario = document.getElementById('inputApellido'),
         telefonoFormulario = document.getElementById('inputTelefono'),
-        planFormulario = document.getElementById('selectPlan'),
         mainContent = document.getElementById('maincont'),
-        textContent = document.querySelectorAll('.datos p');
+        textContent = document.querySelectorAll('.datos p'),
+        loadPlan = document.getElementById('opcionPlan');
+
 
     mainContent
         noMostrarElementos()
@@ -34,28 +48,21 @@ const tarjeta = document.querySelector('#tarjeta'),
     function noMostrarElementos(){
             deshabilitarTarjeta.style.display ="none";
             sitioCobro.style.display ="none";
-            planFormulario.style.display="none";
-            tipoPago.style.display="none";
+            // planFormulario.style.display="none";
+            // tipoPago.style.display="none";
         }
     
     //Funcion para Agregar Metodo de pago
     function mostrarPago(){
-        tipoPago.style.display="block";
-        planContrato.style.display="none"
+        loadPlan.style.display = "block";
+        // planContrato.style.display="none"
 
     }
-
-    //Funcion para Agregar Sitio de Cobro
-    function mostrarSitioCobro(){
-        tipoPago.style.display="none";
-        sitioCobro.style.display="block";
-    }
-
 
     //Funcion para Agregar Tarjeta
     const mostrarTarjeta = () =>{
         deshabilitarTarjeta.style.display ="block";
-        pagoEfectivo.style.display = "none";
+        // pagoEfectivo.style.display = "none";
     }
 
     // Funcion Para voltear tarjeta
@@ -66,41 +73,38 @@ const tarjeta = document.querySelector('#tarjeta'),
     }
 
     //Desplegar Planes promocionales cuando se use el boton
-      planPromo.addEventListener('click',()=>{
-        planFormulario.style.display="block";
-            let promo = ["Plan Estudiantil" ,"Plan Familiar", "Plan Empresarial"];
-            for(let i = 0;i<promo.length;i++){
-            let Promo = document.createElement('option');
-                Promo.value = promo[i];
-                Promo.innerText = promo[i];
-                tipoPlan.appendChild(Promo);
-            }
-            mostrarPago();
-})
+      loadPlan.addEventListener('focus',()=>{
+        cargaDatos();
+      })
 
-    //Desplegar Planes personalizados cuando se use el boton
-    planCustom.addEventListener('click',()=>{
-        planFormulario.style.display="block";
+    //Funcion para generar la cargar los planes seleccionados
 
-        for(let i=1;i<=50;i++){
-            let custom = document.createElement('option');
-            custom.value = i;
-            custom.innerText = i + "MB";
-            tipoPlan.appendChild(custom);
-        }
-        mostrarPago();
-    })
+        function cargaDatos(){
+            let promo = localStorage.getItem('promos');
+                switch (promo) {
+                    case "promo1":
+                            promo = "Plan Estudiantil"
+                        break;
+                    case "promo2":
+                            promo = "Plan Familiar"
+                        break;
+                    case "promo3":
+                            promo = "Plan Empresarial"
+                        break;
+                    default:
+                        break;
+                }
+                let opciones = document.createElement('option');
+                        opciones.value = promo;
+                        opciones.innerText = promo;
+                    loadPlan.appendChild(opciones);
+                console.log(promo);
+                mostrarPago();
+    }
 
     //Mostrar Tarjeta cuando se usa su boton
     pagoTarjeta.addEventListener('click',()=>{
         mostrarTarjeta();
-    });
-
-    //No mostrar Tarjeta cuando se paga en efectivo
-    pagoEfectivo.addEventListener('click',()=>{
-        pagoTarjeta.style.display = "none";
-        sitioCobro.style.display = "block";
-        mostrarSitioCobro();
     });
 
     // Animacion de tarjeta 
@@ -113,7 +117,6 @@ const tarjeta = document.querySelector('#tarjeta'),
         btnAbrirFormulario.classList.toggle('active');
             formulario.classList.toggle('active');
     });
-
 
     //Limpieza de la tarjeta
 

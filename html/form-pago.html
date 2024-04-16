@@ -1,99 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posadas net</title>
-    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/f/f4/Flag_map_of_Misiones.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/f/f4/Flag_map_of_Misiones.png"
+        type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/formulario.css">
 </head>
+
 <body>
-    <div id="maincont"class="contenedor">
-        <div class="izquierda">
-                    <!-- Formulario de Contacto -->
-                    <form action="" id="formulario-contacto" class="formulario-contacto">
-                        <h2 class="form-title">Formulario de cobro</h2>
-                        <p class="form-text">Por favor ingrese sus datos</p>
+    <div id="maincont" class="contenedor">
+                <div class="izquierda">
+            <!-- Formulario de Contacto -->
+            <form action="" id="formulario-contacto" class="formulario-contacto">
+                <h2 class="form-title">Formulario de cobro</h2>
+                <p class="form-text">Por favor ingrese sus datos</p>
 
-                        <div class="grupo" id="grupo">
+                <div class="grupo" id="grupo">
 
-                            <div class="grupo-input" id="grupo__nombre">
-                                <label for="inputNombre" class="formulario__label">Nombre</label>
-                                <input class="formulario__input" name="nombre" type="text" id="inputNombre" placeholder="Nombre" autocomplete="off">
-                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> 
-                                <p class="formulario__input-error">Por favor solo ingrese letras </p>   
-                            </div>
+                    <div class="grupo-input" id="grupo__nombre">
+                        <label for="inputNombre" class="formulario__label">Nombre</label>
+                        <input class="formulario__input" name="nombre" type="text" id="inputNombre" placeholder="Nombre"
+                            autocomplete="off">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                        <p class="formulario__input-error">Por favor solo ingrese letras </p>
+                    </div>
 
-                            <div class="grupo-input" id="grupo__apellido" >
-                                <label for="inputApellido" class="formulario__label">Apellido</label>
-                                <input class="formulario__input" name="apellido" type="text" id="inputApellido"placeholder="Apellido" autocomplete="off">
-                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
-                                <p class="formulario__input-error">Por favor solo ingrese letras</p>
-                            </div>
+                    <div class="grupo-input" id="grupo__apellido">
+                        <label for="inputApellido" class="formulario__label">Apellido</label>
+                        <input class="formulario__input" name="apellido" type="text" id="inputApellido"
+                            placeholder="Apellido" autocomplete="off">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                        <p class="formulario__input-error">Por favor solo ingrese letras</p>
+                    </div>
 
-                            <div class="grupo-input" id="grupo__email">
-                                <label for="inputCorreo" class="formulario__label">Correo Electronico</label>
-                                <input class="formulario__input" name="email" type="email" id="inputCorreo"placeholder="correo@correo.com" autocomplete="off">
-                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
-                                <p class="formulario__input-error">El correo solo puede contener numeros, letras, puntos, guiones y guion bajo</p>
-                            </div>
+                    <div class="grupo-input" id="grupo__email">
+                        <label for="inputCorreo" class="formulario__label">Correo Electronico</label>
+                        <input class="formulario__input" name="email" type="email" id="inputCorreo"
+                            placeholder="correo@correo.com" autocomplete="off">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                        <p class="formulario__input-error">El correo solo puede contener numeros, letras, puntos,
+                            guiones y guion bajo</p>
+                    </div>
 
-                            <div class="grupo-input" id="grupo__telefono">
-                                <label for="inputTelefono" class="formulario__label">Numero de Telefono</label>
-                                <input class="formulario__input" name="telefono" type="text" id="inputTelefono"placeholder="1234567891" autocomplete="off">
-                                <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
-                                <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 digitos</p>
-                            </div>
+                    <div class="grupo-input" id="grupo__telefono">
+                        <label for="inputTelefono" class="formulario__label">Numero de Telefono</label>
+                        <input class="formulario__input" name="telefono" type="text" id="inputTelefono"
+                            placeholder="1234567891" autocomplete="off">
+                        <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+                        <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14
+                            digitos</p>
+                    </div>
 
-                            <div id="planContrato">
-                                <label for="inputPago">Tipo de Plan a Contratar</label>
-                            
-                                <div class="flexbox">
-                                <input type="button" value="Plan Promocional" id="planPromocional">
-                                <input type="button" value="Personalizado" id="planPersonalizado">
-                            </div>
-                            </div>
+                    <div id="planContrato">
+                        <label for="inputPago">Tipo de Plan a Contratar</label>
 
-                            <div id="selectPlan">
-                                <label for="inputPlan">Selecione el plan a contratar</label>
-                                <div class="grupo-select">
-                                    <select name="plan" id="opcionPlan">
-                                        <option disabled selected required="true">Plan</option>
-                                    </select>
-                                    <img src="../multimedia/angle-down-solid.svg" alt="">
-                                </div>
-                            </div>
-                            <div id="metodoPago">
-
-                                <label for="inputPago">Metodo de Pago</label>
-                            <div class="flexbox">
-                                <input type="button" value="Pago en Efectivo" id="pagoEfectivo">
-                                <input type="button" value="Pago con Tarjeta" id="pagoTarjeta">
-                            </div>
-                            </div>
-
-                                <div id="sitioCobro">
-                                    <label for="lugarAbono">Seleccione lugar en donde realizar el pago</label>
-                                <div class="grupo-select">
-                                    <select name="abono" id="lugarAbono">
-                                        <option disabled selected required="true">Lugar a abonar</option>
-                                    </select>
-                                    <img src="../multimedia/angle-down-solid.svg" alt="">
-
-                                    <div class="formulario-contacto__mensaje" id="formulario__mensaje">
-                                        <p><i class="fa-solid fa-triangle-exclamation"></i><b>Error:</b>Por favor complete el formulario correctamente</p>
-                                    </div>
-                                    <button type="submit" class="btn-enviar">Confirmar Pago</button>
-                                </div>
-                            </div>
+                        <div class="flexbox">
+                            <!-- <input type="button" value="Plan Promocional" id="planPromocional">
+                                <input type="button" value="Personalizado" id="planPersonalizado"> -->
                         </div>
-                    </form>
+                    </div>
+
+                    <div id="selectPlan">
+                        <label for="inputPlan">Plan a contratar</label>
+                        <div class="grupo-select">
+                            <select name="plan" id="opcionPlan">
+                                <option disabled selected required="true">Plan</option>
+                            </select>
+                            <img src="../multimedia/angle-down-solid.svg" alt="">
+                        </div>
+                    </div>
+                    <div id="metodoPago">
+
+                        <label for="inputPago">Metodo de Pago</label>
+                        <div class="flexbox">
+                            <!-- <input type="button" value="Pago en Efectivo" id="pagoEfectivo"> -->
+                            <input type="button" value="Pago con Tarjeta" id="pagoTarjeta">
+                        </div>
+                    </div>
+
+                    <div id="sitioCobro">
+                        <label for="lugarAbono">Seleccione lugar en donde realizar el pago</label>
+                        <div class="grupo-select">
+                            <select name="abono" id="lugarAbono">
+                                <option disabled selected required="true">Lugar a abonar</option>
+                            </select>
+                            <img src="../multimedia/angle-down-solid.svg" alt="">
+
+                            <div class="formulario-contacto__mensaje" id="formulario__mensaje">
+                                <p><i class="fa-solid fa-triangle-exclamation"></i><b>Error:</b>Por favor complete el
+                                    formulario correctamente</p>
+                            </div>
+                            <button type="submit" class="btn-enviar">Confirmar Pago</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-          <!-- Tarjeta de Credito -->
-        <div class="derecha" id="derecha" >
+        <!-- Tarjeta de Credito -->
+        <div class="derecha" id="derecha">
             <section class="tarjeta" id="tarjeta">
                 <div class="delantera">
                     <div class="logo-marca" id="logo-marca">
@@ -109,7 +119,7 @@
                                 <p class="label">Nombre Tarjeta</p>
                                 <p class="nombre">Jhon Doe</p>
                             </div>
-    
+
                             <div class="grupo" id="expiracion">
                                 <p class="label">Vencimiento</p>
                                 <p class="nombre"><span class="mes">MM</span>/<span class="year">AA</span></p>
@@ -117,13 +127,15 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="trasera">
                     <div class="barra-magnetica"></div>
                     <div class="datos">
                         <div class="grupo" id="firma">
                             <p class="label">Firma</p>
-                            <div class="firma"><p></p></div>
+                            <div class="firma">
+                                <p></p>
+                            </div>
                         </div>
                         <div class="grupo" id="CCV">
                             <p class="label">CCV</p>
@@ -132,9 +144,10 @@
                     </div>
                     <br class="leyenda">
                     Esta tajeta es intrasnferible<br>
-                    El titular utiliza esta Tarjeta de acuerdo con los terminos y condiciones que rigen la emision de la misma
+                    El titular utiliza esta Tarjeta de acuerdo con los terminos y condiciones que rigen la emision de la
+                    misma
                     </p>
-                    </div>
+                </div>
             </section>
             <!-- Boton del Formulario -->
             <div class="contenedor-btn">
@@ -143,19 +156,21 @@
                 </button>
             </div>
             <!-- Formulario Tarjeta-->
-            <form action=""id="formulario-tarjeta" class="formulario-tarjeta">
+            <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
 
                 <div class="grupo grupo-input" id="grupo__tarjetaCredito">
                     <label class="formulario__label" for="inputNumero">Numero Tarjeta</label>
-                    <input class="formulario__input" type="text" name="tarjetaCredito" id="inputNumero" maxlength="19" autocomplete="off">
-                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> 
+                    <input class="formulario__input" type="text" name="tarjetaCredito" id="inputNumero" maxlength="19"
+                        autocomplete="off">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
                     <p class="formulario__input-error">Por favor ingrese solo numeros en el formato correcto</p>
                 </div>
 
                 <div class="grupo grupo-input" id="grupo__propietarioTarjeta">
                     <label class="formulario__label" for="inputNombrePropietario">Nombre Propietario</label>
-                    <input class="formulario__input" type="text" name="propietarioTarjeta" id="inputNombre" maxlength="19" autocomplete="off">
-                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i> 
+                    <input class="formulario__input" type="text" name="propietarioTarjeta" id="inputNombre"
+                        maxlength="19" autocomplete="off">
+                    <i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
                     <p class="formulario__input-error">Por favor no ingrese caracteres numericos o especiales</p>
                 </div>
 
@@ -184,17 +199,22 @@
                 </div>
 
                 <div class="formulario-contacto__mensaje" id="formulario__mensaje-tarjeta">
-                    <p><i class="fa-solid fa-triangle-exclamation"></i><b>Error:</b>Por favor complete el formulario correctamente</p>
+                    <p><i class="fa-solid fa-triangle-exclamation"></i><b>Error:</b>Por favor complete el formulario
+                        correctamente</p>
                 </div>
-                        <button type="submit" class="btn-enviar">Confirmar Pago</button>
+                <button type="submit" class="btn-enviar">Confirmar Pago</button>
+                <div class="lds-ring loader" id="loader"><div></div><div></div><div></div><div></div></div>
+
             </form>
+            
         </div>
-        </div>
-        <script src="../js/form.js"></script>
-        <script src="../js/validacion-forms.js"></script>
-        <!-- <script src="../js/sweetAlert.js"></script> -->
-        <script src="https://kit.fontawesome.com/b7688e1b26.js" crossorigin="anonymous"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        
+    </div>
+    <script src="../js/form.js"></script>
+    <script src="../js/validacion-forms.js"></script>
+    <!-- <script src="../js/sweetAlert.js"></script> -->
+    <script src="https://kit.fontawesome.com/b7688e1b26.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
+
 </html>

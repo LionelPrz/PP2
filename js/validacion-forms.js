@@ -95,14 +95,17 @@ const inputs2 = document.querySelectorAll('#formulario-tarjeta input');
         e.preventDefault();
 
         if(campos.nombre && campos.apellido && campos.email && campos.telefono && campos.propietarioTarjeta && campos.tarjetaCredito){
-            Swal.fire({
-                icon:'success',
-                text:'Has contratado tu plan con exito',
-                showConfirmButton: false,
-                timer: 2000  
-              })
-              formularioTarjeta.reset();
-              limpiarTarjeta();
+            // Swal.fire({
+            //     icon:'success',
+            //     text:'Has contratado tu plan con exito',
+            //     showConfirmButton: false,
+            //     timer: 2000  
+            //   })
+            setTimeout(() => {
+                formularioTarjeta.reset();
+              limpiarTarjeta(); 
+            },3000);
+              
 
             //Limpieza de los iconos del formulario
             document.querySelectorAll('.formulario__grupo-correcto').forEach((icono)=>{
@@ -131,16 +134,6 @@ const inputs2 = document.querySelectorAll('#formulario-tarjeta input');
             opcion.value= i;
             opcion.innerText= i;
             formulario.selectYear.appendChild(opcion);
-    }
-
-    //Creacion de las opciones para poder abonar en efectivo
-    
-    let lugares = ["Sucursal" ,"Domicilio"];
-    for(let i = 0;i<lugares.length;i++){
-        let opcion = document.createElement('option');
-        opcion.value = lugares[i];
-        opcion.innerText = lugares[i];
-        lugarAbono.appendChild(opcion);
     }
 
   //  Validacion del numero de tarjeta

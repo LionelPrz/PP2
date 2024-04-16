@@ -10,7 +10,17 @@ const carta3 = document.getElementById('card3');
 const boton1 = document.getElementById('boton1');
 const boton2 = document.getElementById('boton2');
 const boton3 = document.getElementById('boton3');
+const cardValue = document.querySelectorAll('.btn-about a[id]');
 
+//Funcion para determinar que oferta es seleccionada
+
+    cardValue.forEach(promocion=>{
+        promocion.addEventListener('click',function(e){
+            let restore;
+                restore =  e.target.id;
+                 localStorage.setItem('promos',restore);
+        })
+    })
 
 //Funcion para resolver el problema del nav con el footer
     function agregadoFooter(){

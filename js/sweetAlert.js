@@ -5,8 +5,8 @@ let contador2 = 2115;
 let suma = 110;
 let resta = 110;
 
-const valor = d.querySelector('#valor');
-const valor2= d.querySelector('#valor2');
+const valor = d.querySelector('#valorM');
+const valor2= d.querySelector('#valorMb');
 const botones = d.querySelectorAll('.boton');
 const exito = d.getElementById("aceptar");
 const body = d.querySelector("body");
@@ -19,7 +19,6 @@ function reseteo(){
       valor.textContent = contador+"MB/PS";
       valor2.textContent = "$"+contador2;
 }
-
 
 redirectbtn.addEventListener('click',()=>{
     aceptar();
@@ -39,6 +38,7 @@ function aceptar(){
     cancelButtonText:
       '<b>Cancelar</b>',
   })
+    localStorage.setItem('megas',valor.textContent);
     reseteo();
   }
   function aceptar1(){
@@ -95,3 +95,4 @@ function aceptar(){
       valor2.textContent = "$"+" "+contador2;
   })
 })
+
