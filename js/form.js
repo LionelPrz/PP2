@@ -38,8 +38,8 @@ const tarjeta = document.querySelector('#tarjeta'),
         telefonoFormulario = document.getElementById('inputTelefono'),
         mainContent = document.getElementById('maincont'),
         textContent = document.querySelectorAll('.datos p'),
-        loadPlan = document.getElementById('opcionPlan');
-
+        loadPlan = document.getElementById('opcionPlan'),
+        nightMode  = document.getElementById('btn-nightMode');
 
     mainContent
         noMostrarElementos()
@@ -80,25 +80,38 @@ const tarjeta = document.querySelector('#tarjeta'),
     //Funcion para generar la cargar los planes seleccionados
 
         function cargaDatos(){
-            let promo = localStorage.getItem('promos');
-                switch (promo) {
+            let final;
+        
+           a = localStorage.getItem('promos');
+        //    b = JSON.stringify(localStorage.getItem('megas'));
+           final = a;
+            // if(final.values){
+            //     final = b.textContent;
+            //     console.log(final);
+            // }
+
+                switch (final) {    
                     case "promo1":
-                            promo = "Plan Estudiantil"
+                            final = "Plan Estudiantil"
                         break;
                     case "promo2":
-                            promo = "Plan Familiar"
+                            final = "Plan Familiar"
                         break;
                     case "promo3":
-                            promo = "Plan Empresarial"
+                            final = "Plan Empresarial"
                         break;
-                    default:
-                        break;
+                    // case final.at[1]:
+                    //     final = b;
+                    //     break;
                 }
+            // }else{
+            //     final= b;
+            //     }
                 let opciones = document.createElement('option');
-                        opciones.value = promo;
-                        opciones.innerText = promo;
+                        opciones.value = final;
+                        opciones.innerText = final;
+                        console.log(final);
                     loadPlan.appendChild(opciones);
-                console.log(promo);
                 mostrarPago();
     }
 
@@ -129,4 +142,24 @@ const tarjeta = document.querySelector('#tarjeta'),
         firma.textContent = valorInput='';
 
     }
+
+    const temaOscuro = ()=>{
+        document.querySelector("body").setAttribute("data-bs-theme","dark");
+        nightMode.removeAttribute("class","bi bi-toggle2-off");
+        nightMode.setAttribute("class","bi bi-toggle2-on");
+    }
+    const temaClaro = ()=>{
+        document.querySelector("body").setAttribute("data-bs-theme","light");
+        nightMode.removeAttribute("class","bi bi-toggle2-on");
+        nightMode.setAttribute("class","bi bi-toggle2-off");
+    }
+    
+    const cambiarTema = ()=>{
+        document.querySelector("body").getAttribute("data-bs-theme")==="light"?
+        temaOscuro() : temaClaro() ;
+    }
+    
+    nightMode.addEventListener('click',()=>{
+        cambiarTema();
+    });
     

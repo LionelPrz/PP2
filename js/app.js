@@ -11,6 +11,29 @@ const boton1 = document.getElementById('boton1');
 const boton2 = document.getElementById('boton2');
 const boton3 = document.getElementById('boton3');
 const cardValue = document.querySelectorAll('.btn-about a[id]');
+const nightMode  = document.getElementById('btn-nightMode');
+
+
+const temaOscuro = ()=>{
+    document.querySelector("body").setAttribute("data-bs-theme","dark");
+    nightMode.removeAttribute("class","bi bi-toggle2-off");
+    nightMode.setAttribute("class","bi bi-toggle2-on");
+}
+const temaClaro = ()=>{
+    document.querySelector("body").setAttribute("data-bs-theme","light");
+    nightMode.removeAttribute("class","bi bi-toggle2-on");
+    nightMode.setAttribute("class","bi bi-toggle2-off");
+}
+
+const cambiarTema = ()=>{
+    document.querySelector("body").getAttribute("data-bs-theme")==="light"?
+    temaOscuro() : temaClaro() ;
+}
+
+nightMode.addEventListener('click',()=>{
+    cambiarTema();
+});
+
 
 //Funcion para determinar que oferta es seleccionada
 

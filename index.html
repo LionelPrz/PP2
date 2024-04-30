@@ -1,149 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport"
-      content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"
-    />
-    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/f/f4/Flag_map_of_Misiones.png" type="image/x-icon">
-    <title>Posadas.NET</title>
-    <!-- Importacion de las hojas de estilos -->
-   <link rel="stylesheet"  href="./css/about-us.css">
-   <link rel="stylesheet" href="./css/contador.css">
-   <link rel="stylesheet" href="./css/footer.css">
-   <link rel="stylesheet" href="./css/header.css">
-   <link rel="stylesheet" href="./css/main.css">
-   <link rel="stylesheet" href="./css/normalize.css">
-   <link rel="stylesheet" href="./css/promociones.css">
-   <link rel="stylesheet" href="./css/responsive.css">
-    <!-- Importacion de Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Posadas.net</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+  <link rel="icon" href="./multimedia/carpi-logo.png">
   </head>
-  <body>
-    <!-- Cabecero -->
-    <header class="header">
-      <nav class="nav" id="header">
-        <a href="#header" class="logo nav-link">
-          <!-- Lugar en donde poner el logo del header -->
-        </a>
-        <button id="cerrar" class="nav-toggle" aria-label="Abrir menú" >
-          <img src="./multimedia/list.svg" alt="">
-        </button>
-        <ul id="abrir" class="nav-menu">
-          <li class="nav-menu-item">
-            <a href="#about-us" class="nav-menu-link nav-link">Sobre Nosotros</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#contador" class="nav-menu-link nav-link nav-menu-link_active">Tu Plan Ideal</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#paquetes" class="nav-menu-link nav-link">Planes</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#footer" class="nav-menu-link nav-link ">Contacto</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!-- Sobre Nosotros -->
-      <section class="about" id="about-us">
-        <div class="content">
-          <!-- <img src="/multimedia/paja.png"> -->
-          <div class="text">
-            <h1>Posadas.Net</h1>
-            <h5>Sobre Nosotros</h5>
-            <p>El servicio de internet que estabas buscando con la mejor relacion calidad-precio de Posadas</p>
-            <p></p>
-            <a href="#paquetes">
-              <button class="btn-about">Conoce nuestras promociones</button>
-            </a>
+  <body class="container-fluid" data-bs-theme="light">
+      <!-- Cabecero -->
+      <header class="header">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+          <div class="container-fluid">
+            <img src="./multimedia/carpi-logo.png" alt="posadas.net-logo" class="img-nav-logo mx-2">
+            <a class="navbar-brand" href="#">Posadas.net</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Nuestros Planes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contactenos</a>
+                  </li>
+                  <li>
+                    <button  type="button" class="btn btn-secondary rounded-pill d-flex">
+                      <p class="mb-0 mx-2">Modo Oscuro</p>
+                      <i id="btn-nightMode" class="bi bi-toggle2-off"></i> 
+                    </button>
+                  </li>
+                  </ul>
+                    <!-- <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul> -->
+                <!-- <form class="d-flex mt-3" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-success" type="submit">Search</button>
+                </form> -->
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Sobre Nosotros -->
+      <main class="my-5">
+        <div class="container-fluid card">
+          <div class="row ">
+            <div class="col-md-5">
+              <img src="./multimedia/carpi-logo.png" alt="asjdaj" class="img-fluid">
+            </div>
+            <div class="col-md-7">
+              <h1 class="card-header ">Posadas.net</h1>
+              <h3 class="mt-4 text-lg-center">El mejor servicio de internet de Posadas con la mejor relacion calidad precio del mercado</>
+            </div>
           </div>
         </div>
-      </section>
-        <!-- Catalogo de Precios  -->
-          <h2 class="texto-catalogo" id="paquetes"> Promociones</h2>
-          <div class="card-container" id="cartas">
-            <div class="delantera" id="card1">
-              <div class="card1">
-                  <button class="btn-about" id="boton1">Mas Informacion</button>
+             <!-- Catalogo de Precios  -->
+             <div>
+              <h2 class="text-center mt-5 mb-5">Nuestros Planes</h2>
+              <div class="row row-cols-1 row-cols-sm-2 g-4">
+                  <div class="col">
+                      <div class="card mb-5">
+                          <img src="./multimedia/carpi logo-1.jpg" class="card-img-top" alt="...">
+                          <div class="card-body ">
+                          </div>
+                          <div class="mb-5 d-flex justify-content-around ">
+                              <!-- <h3>$6.405</h3> -->
+                              <button class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto">Contratar</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="card mb-5">
+                          <img src="./multimedia/carpi logo-2.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          </div>
+                          <div class="mb-5 d-flex justify-content-around">
+                              <!-- <h3>$3655</h3> -->
+                              <button class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto">Contratar</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="card mb-5">
+                          <img src="./multimedia/carpi logo-3.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          </div>
+                          <div class="mb-5 d-flex justify-content-around">
+                              <!-- <h3>$4755</h3> -->
+                              <button class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto">Contratar</button>
+                          </div>
+                      </div>
+                  </div>
+      
+                  <div class="col">
+                      <div class="card mb-5">
+                          <img src="./multimedia/carpi logo-4.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                          </div>
+                          <div class="mb-5 d-flex justify-content-around">
+                              <!-- <h3>$5855</h3> -->
+                              <button class="btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto">Contratar</button>
+                          </div>
+                      </div>
+                  </div>
               </div>
-              <div class="trasera trasera1">  
-                <button class="btn-about" >
-                  <a  id="promo1" href="./html/form-pago.html" target="_blank">Contratar</a>
-                </button>
+      </main>
+            <footer class="bg-dark text-white py-2 w-100">
+              <div class="container">
+                <nav class="row">
+                  <a href="#" class="col-4 text-reset text-uppercase d-flex aling-items-center">
+                    <img src="./multimedia/logo-carpi-footer2.png" alt="Logo Posadas.net" class="img-logo" >
+                  </a>
+                  <ul class="col-4 list-unstyled text-center">
+                    <li class="font-weight-bold text-uppercase text-center pb-3">Menu</li>
+                    <li><a href="#" class="text-reset"></a>Home</li>
+                    <li><a href="#" class="text-reset"></a>Nuestros Planes</li>
+                    <li><a href="#" class="text-reset"></a>Contactenos</li>
+                  </ul>
+                  
+                  <ul class="col-4 list-unstyled">
+                    <li class="font-weight-bold text-uppercase text-center pb-3">Redes Sociales</li>
+                    <li class="d-flex justify-content-around mt-2">
+                      <a href="#" class="text-reset">
+                        <i class="fa-brands fa-facebook-f"></i>
+                      </a>
+                      <a href="#" class="text-reset">
+                        <i class="fa-brands fa-instagram"></i>
+                      </a>
+                      <a href="#" class="text-reset">
+                        <i class="fa-brands fa-whatsapp"></i>
+                      </a>
+                    </li>
+                </nav>
               </div>
-            </div>
-            <div class="delantera" id="card2">
-              <div class="card2">
-                  <button class="btn-about" id="boton2">Mas Informacion</button>
-              </div>
-              <div class="trasera trasera2">
-                <button class="btn-about" >
-                  <a id="promo2" href="./html/form-pago.html" target="_blank">Contratar</a>
-                </button>
-              </div>
-            </div>
-            <div class="delantera" id="card3">
-              <div class="card3">
-                  <button class="btn-about" id="boton3">Mas Informacion</button>
-              </div>
-              <div class="trasera trasera3">
-                        <button class="btn-about" >
-                          <a id="promo3" href="./html/form-pago.html" target="_blank">Contratar</a>
-                        </button>
-                      
+  
+            </footer>
+            <!-- <h2 class="texto-catalogo" id="paquetes"> Promociones</h2>
+            <div class="card-container" id="cartas">
+              <div class="delantera" id="card1">
+                <div class="card1">
+                    <button class="btn btn-primary" id="boton1">Mas Informacion</button>
+                </div>
+                <div class="trasera trasera1">  
+                  <button class="btn btn-primary" >
+                    <a id="promo1" href="./html/form-pago.html" target="_blank" class="btn btn-primary btn-sm"  >Contratar</a>
+                  </button>
                 </div>
               </div>
-          </div>
-    <!-- Contenido Principal  / Contador-->
-    <div class="horizontal-padding vertical-padding" Id="contador">
-      <div class="master-container-contador ">
-        <div class="texto-contador"><h2>Seleccione Su Plan Ideal </h2></div>
-        <div class="container-contador" id="valorContador">
-          <div class="valores2">
-            <h2 id="valorM">$ 2115</h2></div>
-          <div class="valores">
-            <h2 id="valorMb">1 MB/PS</h2></div>
-          <div class="botones">
-            <button class="boton aumentar"><img src="./multimedia/keyboard_double_arrow_up_black_24dp.svg" alt=""></button>
-            <button id="reset"class="boton resetear"><img src="./multimedia/cached_black_24dp.svg" alt=""></button>
-            <button class="boton disminuir"><img src="./multimedia/keyboard_double_arrow_down_black_24dp.svg" alt=""></button>
-          </div>
-        </div>
-        <div class="boton-contratar">
-          <button id="acepbtn">ACEPTAR</button>
-          <a href="./html/form-pago.html"></a>
-        </div>
-      </div>
-    </div>
-      </div>
-    </div>
-    <!-- Pie de Pagina -->
-    <footer id="footer" class="footer">
-        <div class="footer-container">
-          <div class="footer-content-container">
-            <!-- Lugar en donde se pone el logo del footer -->
-            <!-- <span class="footer-info">3794 870925</span>
-            <span class="footer-info">Posadasnett@gmail.com</span> -->
-          </div>
-          </div>
-          <div class="footer-content-container">
-            <span class="menu-title">Contactenos</span>
-            <div class="social-container">
-                <a href="#" class="social-link"></a>
-                <a href="#" class="social-link"></a>
-                <a href="#" class="social-link"></a>
+              <div class="delantera" id="card2">
+                <div class="card2">
+                    <button class="btn btn-primary" id="boton2">Mas Informacion</button>
+                </div>
+                <div class="trasera trasera2">
+                  <button class="btn btn-primary" >
+                    <a id="promo2" href="./html/form-pago.html" target="_blank" class="btn btn-primary btn-sm">Contratar</a>
+                  </button>
+                </div>
+              </div>
+              <div class="delantera" id="card3">
+                <div class="card3">
+                    <button class="btn btn-primary" id="boton3">Mas Informacion</button>
+                </div>
+                <div class="trasera trasera3">
+                          <button class="btn btn-primary" >
+                            <a id="promo3" href="./html/form-pago.html" target="_blank" class="btn btn-primary btn-sm">Contratar</a>
+                          </button>
+                        
+                  </div>
+                </div>
+            </div> -->
+      <!-- Contenido Principal  / Contador-->
+      <!-- <div class="horizontal-padding vertical-padding" Id="contador">
+        <div class="master-container-contador ">
+          <div class="texto-contador"><h2>Seleccione Su Plan Ideal </h2></div>
+          <div class="container-contador" id="valorContador">
+            <div class="valores2">
+              <h2 id="valorM">$ 2115</h2></div>
+            <div class="valores">
+              <h2 id="valorMb">1 MB/PS</h2></div>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+              
+              <button class="btn btn-outline-primary boton aumentar"><img src="./multimedia/keyboard_double_arrow_up_black_24dp.svg" alt=""></button>
+              <button id="reset"class="btn btn-outline-primary boton resetear"><img src="./multimedia/cached_black_24dp.svg" alt=""></button>
+              <button class="btn btn-outline-primary boton disminuir"><img src="./multimedia/keyboard_double_arrow_down_black_24dp.svg" alt=""></button>
             </div>
           </div>
+          <div class="boton-contratar ">
+            <button id="acepbtn" class="btn btn-primary">ACEPTAR</button>
+            <a href="./html/form-pago.html"></a>
+          </div>
         </div>
-      <div class="copyright-container footer">
-        <span class="copyright">&copy;2022 Todos Los Derechos Reservados©</span>
       </div>
-    </footer>
-    <script src="./js/app.js"></script>
-    <script src="./js/sweetAlert.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+        </div>
+      </div> -->
+      <script src="./js/app.js"></script>
+      <script src="./js/sweetAlert.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/575e84c603.js" crossorigin="anonymous"></script>
   </body>
 </html>
