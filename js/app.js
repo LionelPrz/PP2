@@ -10,9 +10,11 @@ const carta3 = document.getElementById('card3');
 const boton1 = document.getElementById('boton1');
 const boton2 = document.getElementById('boton2');
 const boton3 = document.getElementById('boton3');
-const cardValue = document.querySelectorAll('.btn-about a[id]');
+const cardValue = document.querySelectorAll('button a[id]');
 const nightMode  = document.getElementById('btn-nightMode');
 
+
+console.log(cardValue);
 
 const temaOscuro = ()=>{
     document.querySelector("body").setAttribute("data-bs-theme","dark");
@@ -39,9 +41,10 @@ nightMode.addEventListener('click',()=>{
 
     cardValue.forEach(promocion=>{
         promocion.addEventListener('click',function(e){
-            let restore;
-                restore =  e.target.id;
-                 localStorage.setItem('promos',restore);
+            let card_id;
+                card_id =  e.target.id;
+                 localStorage.setItem('promos',card_id);
+                 console.log(card_id);
         })
     })
 
@@ -52,68 +55,3 @@ nightMode.addEventListener('click',()=>{
     function eliminacionFooter(){
         footer.style.display = "none";
 }
-
-//Generacion de menu de hamburguesa
-navToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("nav-menu_visible");
-
-  if (navMenu.classList.contains("nav-menu_visible")) {
-    navToggle.setAttribute("aria-label", "Cerrar menú");
-}
- else {
-    navToggle.setAttribute("aria-label", "Abrir menú");
-}
-    if(navMenu.classList.contains("nav-menu_visible")){
-        eliminacionFooter();
-}
-    else if(navMenu.classList.contains("nav-menu")){
-        agregadoFooter();
-    }
-});
-menuLinks.forEach(menuLink=>{
-    menuLink.addEventListener("click",function(){
-        navMenu.classList.remove("nav-menu_visible");
-    })
-})
-
-//Generacion de catalogo de precios animado
-
-        carta1.addEventListener('click',()=>{
-            carta1.classList.toggle('active');
-
-            if(carta1.classList.contains('active')){
-                boton1.classList.remove('btn-about');
-                boton1.style.display = "none";
-                boton1.disabled = true;
-            }
-            else{
-                boton1.classList.add('btn-about');
-                boton1.style.display="block"
-            }
-        });
-        carta2.addEventListener('click',()=>{
-            carta2.classList.toggle('active');
-
-            if(carta2.classList.contains('active')){
-                boton2.classList.remove('btn-about');
-                boton2.style.display = "none";
-                boton2.disabled = true;
-            }
-            else{
-                boton2.classList.add('btn-about');
-                boton2.style.display="block"
-            }
-        });
-        carta3.addEventListener('click',()=>{
-            carta3.classList.toggle('active');
-            
-            if(carta3.classList.contains('active')){
-                boton3.classList.remove('btn-about');
-                boton3.style.display = "none";
-                boton3.disabled = true;
-            }
-            else{
-                boton3.classList.add('btn-about');
-                boton3.style.display="block"
-            }
-        });

@@ -3,6 +3,7 @@ const formularioContacto = document.getElementById('formulario-contacto');
 const formularioTarjeta = document.getElementById('formulario-tarjeta');
 const inputs = document.querySelectorAll('#grupo input');
 const inputs2 = document.querySelectorAll('#formulario-tarjeta input');
+const pagof = document.getElementById('btn-pagof');
 
     //Generacion de las expresiones regulares
     const expresiones = {
@@ -80,34 +81,23 @@ const inputs2 = document.querySelectorAll('#formulario-tarjeta input');
     //Generacion de la comprobacion de completado del formulario de contacto
     inputs.forEach((input)=>{
         input.addEventListener('keyup',validarFormulario);
-        // input.addEventListener('blur',validarFormulario);
     })
     //Generacion de la comprobacion de completado del formulario de contacto
     inputs2.forEach((input)=>{
         input.addEventListener('keyup',validarFormulario);
-        // input.addEventListener('blur',validarFormulario);
     })
 
 
     //Generacion de la comprobacion de los campos del formulario de tarjeta
 
-    formularioTarjeta.addEventListener('submit', (e)=>{
+    pagof,formularioTarjeta.addEventListener('submit', (e)=>{
         e.preventDefault();
 
         if(campos.nombre && campos.apellido && campos.email && campos.telefono && campos.propietarioTarjeta && campos.tarjetaCredito){
-            // Swal.fire({
-            //     icon:'success',
-            //     text:'Has contratado tu plan con exito',
-            //     showConfirmButton: false,
-            //     timer: 2000  
-            //   })
-            setTimeout(() => {
-                formularioTarjeta.reset();
-              limpiarTarjeta(); 
-            },3000);
-              
+                loaderT();
 
-            //Limpieza de los iconos del formulario
+
+    //Limpieza de los iconos del formulario
             document.querySelectorAll('.formulario__grupo-correcto').forEach((icono)=>{
                 icono.classList.remove('formulario__grupo-correcto');
             })
@@ -116,6 +106,31 @@ const inputs2 = document.querySelectorAll('#formulario-tarjeta input');
              document.getElementById('formulario__mensaje-tarjeta').classList.add('formulario-contacto__mensaje-activo');
         }
     });
+
+    //Generacion del loader y alert
+
+    function loaderT(){
+        let estado;
+        estado = pagof;
+
+        estado.innerHTML = "<div class='d-flex justify-content-center'><div class='spinner-border' role='status'></div>  <span class='visually-hidden'>Loading...</span></div>";
+        setTimeout(() => {
+            estado.innerHTML = "<i class='bi bi-check-circle'></i>"
+            formularioTarjeta.reset();
+            formularioContacto.reset();
+          limpiarTarjeta(); 
+            Swal.fire({
+            title: "¡Gracias por Contratarnos!",
+            text: "En la brevedad el equipo técnico se contactara con usted, para acordar la visita técnica",
+            imageUrl: "../multimedia/alert-final1.png",
+            imageWidth: 500,
+            imageHeight: 275,
+            imageAlt: "Custom image",
+            buttonsStyling: false,
+        });
+        },2500);
+    }
+
 
     // Generacion de meses de manera dinamica
     for(let i=1;i<=12;i++){

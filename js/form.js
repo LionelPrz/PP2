@@ -1,26 +1,3 @@
-        // lugarAbono = document.getElementById('lugarAbono'),
-        // sitioCobro = document.getElementById('sitioCobro'),
-        // planPromo = document.getElementById('planPromocional'),
-        // planCustom = document.getElementById('planPersonalizado'),
-        // pagoEfectivo = document.getElementById('pagoEfectivo'),
-        // tipoPago = document.getElementById('metodoPago'),
-        // tipoPlan = document.getElementById('opcionPlan'),
-        // planFormulario = document.getElementById('selectPlan'),
-        //  planContrato = document.getElementById('planContrato'),
-    //No mostrar Tarjeta cuando se paga en efectivo
-    // pagoEfectivo.addEventListener('click',()=>{
-    //     pagoTarjeta.style.display = "none";
-    //     sitioCobro.style.display = "block";
-        //Desplegar Planes personalizados cuando se use el boton
-    // tipoPlan.addEventListener('click',()=>{
-    //     planFormulario.style.display="block";
-    //         let custom = document.createElement('option');
-    //         custom.innerText = localStorage.getItem('megas');
-    //         tipoPlan.appendChild(custom);
-    //     mostrarPago();
-    // })
-    //     mostrarSitioCobro();
-    // });
 const tarjeta = document.querySelector('#tarjeta'),
         btnAbrirFormulario = document.querySelector('#btn-abrir-formulario'),
         formulario = document.querySelector('#formulario-tarjeta'),
@@ -39,6 +16,7 @@ const tarjeta = document.querySelector('#tarjeta'),
         mainContent = document.getElementById('maincont'),
         textContent = document.querySelectorAll('.datos p'),
         loadPlan = document.getElementById('opcionPlan'),
+        pricePlan = document.getElementById('finalPrice'),
         nightMode  = document.getElementById('btn-nightMode');
 
     mainContent
@@ -48,21 +26,17 @@ const tarjeta = document.querySelector('#tarjeta'),
     function noMostrarElementos(){
             deshabilitarTarjeta.style.display ="none";
             sitioCobro.style.display ="none";
-            // planFormulario.style.display="none";
-            // tipoPago.style.display="none";
         }
     
     //Funcion para Agregar Metodo de pago
     function mostrarPago(){
         loadPlan.style.display = "block";
-        // planContrato.style.display="none"
 
     }
 
     //Funcion para Agregar Tarjeta
     const mostrarTarjeta = () =>{
         deshabilitarTarjeta.style.display ="block";
-        // pagoEfectivo.style.display = "none";
     }
 
     // Funcion Para voltear tarjeta
@@ -73,7 +47,7 @@ const tarjeta = document.querySelector('#tarjeta'),
     }
 
     //Desplegar Planes promocionales cuando se use el boton
-      loadPlan.addEventListener('focus',()=>{
+      pricePlan,loadPlan.addEventListener('focus',()=>{
         cargaDatos();
       })
 
@@ -81,37 +55,38 @@ const tarjeta = document.querySelector('#tarjeta'),
 
         function cargaDatos(){
             let final;
+            let b;
         
-           a = localStorage.getItem('promos');
-        //    b = JSON.stringify(localStorage.getItem('megas'));
-           final = a;
-            // if(final.values){
-            //     final = b.textContent;
-            //     console.log(final);
-            // }
+           final = localStorage.getItem('promos');
 
                 switch (final) {    
-                    case "promo1":
-                            final = "Plan Estudiantil"
-                        break;
-                    case "promo2":
-                            final = "Plan Familiar"
-                        break;
-                    case "promo3":
+                    case "card1":
                             final = "Plan Empresarial"
+                            b = "$6405"
                         break;
-                    // case final.at[1]:
-                    //     final = b;
-                    //     break;
+                    case "card2":
+                            final = "Plan Familiar"
+                            b = "$3655"
+                        break;
+                    case "card3":
+                            final = "Plan Estudiantil"
+                            b = "$4755"
+                        break;
+                        case "card4":
+                            final = "Plan Gaming"
+                            b = "$5855"
+                        break;
                 }
-            // }else{
-            //     final= b;
-            //     }
                 let opciones = document.createElement('option');
                         opciones.value = final;
                         opciones.innerText = final;
                         console.log(final);
                     loadPlan.appendChild(opciones);
+                let precios = document.createElement('option');
+                        precios.value = b;
+                        precios.innerText = b;
+                        console.log(b);
+                    pricePlan.appendChild(precios);
                 mostrarPago();
     }
 
