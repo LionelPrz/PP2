@@ -26,3 +26,7 @@
 .btn-mio:hover{
     background: #116CB4;
 }
+.form-check form-switch{
+    margin: 1rem;
+    border: #116CB4 1px;
+}

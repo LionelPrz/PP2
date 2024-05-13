@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../multimedia/carpi-logo.png" type="icon">
 </head>
-<body class="container-fluid" data-bs-theme="light">
+<body class="container-fluid">
     <header class="header">
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
           <div class="container-fluid">
@@ -31,19 +31,21 @@
               <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="../index.html#Inicio">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Nuestros Planes</a>
+                    <a class="nav-link" href="../index.html#Planes">Nuestros Planes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contactenos</a>
+                    <a class="nav-link" href="../index.html#Contacto">Contactenos</a>
                   </li>
                   <li>
                     <button  type="button" class="btn btn-secondary rounded-pill d-flex">
-                      <p class="mb-0 mx-2">Modo Oscuro</p>
-                      <i id="btn-nightMode" class="bi bi-toggle2-off"></i> 
-                    </button>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input " type="checkbox" id="darkModeSwitch" checked>
+                          <label class="form-check-label" for="darkModeSwitch">Modo oscuro</label>
+                        </div>
+                      </button>
                   </li>
                   </ul>
               </div>
@@ -244,49 +246,39 @@
                         correctamente</p>
                 </div>
                 <button id="btn-pagof" type="submit" class="btn-enviar btn btn-primary">Confirmar Pago</button>
-
             </form>
-            
+
         </div>
     </div>
-    <!-- <footer class="bg-dark text-white py-2 w-100 h-20">
-        <div class="container">
-          <nav class="row">
-            <a href="#" class="col-4 text-reset text-uppercase d-flex aling-items-center">
-              <img src="../multimedia/logo-carpi-footer2.png" alt="Logo Posadas.net" class="img-logo" >
-            </a>
-            <ul class="col-4 list-unstyled text-center">
-              <li class="font-weight-bold text-uppercase text-center pb-3">Menu</li>
-              <li><a href="#" class="text-reset"></a>Home</li>
-              <li><a href="#" class="text-reset"></a>Nuestros Planes</li>
-              <li><a href="#" class="text-reset"></a>Contactenos</li>
-            </ul>
-            
-            <ul class="col-4 list-unstyled">
-              <li class="font-weight-bold text-uppercase text-center pb-3">Redes Sociales</li>
-              <li class="d-flex justify-content-around mt-2">
-                <a href="#" class="text-reset">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="#" class="text-reset">
-                  <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#" class="text-reset">
-                  <i class="fa-brands fa-whatsapp"></i>
-                </a>
-              </li>
-          </nav>
+    <div class="container">
+      </div>
+      <footer class="text-center text-lg-start" style="background-color: #9498A6;">
+        <div class="container d-flex justify-content-center py-5">
+          <button type="button" class="btn btn-primary btn-lg btn-floating mx-2">
+            <i class="bi bi-instagram">
+              <a href="https://instagram.com" target="_blank"></a>
+            </i>
+          </button>
+          <button type="button" class="btn btn-primary btn-lg btn-floating mx-2">
+            <i class="bi bi-facebook">
+              <a href="https://facebook.com" target="_blank"></a>
+            </i>
+          </button>
+          <button type="button" class="btn btn-primary btn-lg btn-floating mx-2">
+            <i class="bi bi-whatsapp">
+              <a href="https://wa.me/+542932518386?text=¡Hola!%20quisiera%20hacer%20una%20consulta." target="_blank"></a>
+            </i>
+          </button>
         </div>
-
-      </footer> -->
+        <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2024 
+          <a class="text-white text-reset text-decoration-none">Posadas.net</a>
+        </div>
+      </footer>
+    <script src="../js/app.js"></script>
     <script src="../js/form.js"></script>
     <script src="../js/validacion-forms.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
-
 </html>

@@ -131,7 +131,6 @@ const pagof = document.getElementById('btn-pagof');
         },2500);
     }
 
-
     // Generacion de meses de manera dinamica
     for(let i=1;i<=12;i++){
 
